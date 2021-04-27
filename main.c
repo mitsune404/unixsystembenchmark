@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <sys/time.h>
 #include <time.h>
 #include <ctype.h>
 #include <stdlib.h>
@@ -9,8 +10,13 @@ int int_input_validity_and_assign();
 int main()
 {
     time_t t1, t2;
+    struct timeval timea;
+    {
+        /* data */
+    };
+    
     int score = 0, val = 0, num = 0;
-    int i, j, buff, var1[8000], var2[8000];
+    int i, j, k, x = 2, buff;
 
     printf("\n>>>>>>>> Select benchmark type <<<<<<<<\n\n(1) Addition\n(2) Multiplication\n(3) Logarithmic\n# Your input : ");
     do
@@ -27,38 +33,37 @@ int main()
     printf("\n");
     t1 = time(NULL);
     printf(ctime(&t1));
+    printf("\n hmmmm\n");
+    gettimeofday(&timea, NULL);
+    printf(ctime(&timea));
+    srand(time(NULL));
 
     printf("Initializing system benchmark...\n");
-    srand(time(NULL));
 
     switch (num)
     {
     case 1:
-        while (time(NULL) < t1 + 1)
+        for (k = 0; k != x; k++)
         {
-            for (i = 0; i != 79999; i++)
+            t1 = time(NULL);
+            while (time(NULL) < t1 + 1)
             {
-                for (j = 0; i != 79999; j++)
-                {
-                    buff = rand()^rand();
-                    buff = i*j;
-                    printf("AAA");
-                }
+                buff = rand()^rand()^rand();
+                score++;
             }
-            score++;
+            printf("Hmm");
         }
+        score = score/x;
         break;
     case 2:
         while (time(NULL) != t1 + 1)
         {
-            printf("maaa");
             score++;
         }
         break;
     case 3:
         while (time(NULL) != t1 + 1)
         {
-            printf("maaa");
             score++;
         }
         break;
