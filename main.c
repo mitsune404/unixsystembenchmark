@@ -6,17 +6,18 @@
 #include <math.h>
 
 int int_input_validity_and_assign();
+int cpu_load();
+double time_cast();
 
 int main()
 {
-    time_t t1, t2;
-    struct timeval timea;
+    struct timespec timea, t1, t2;
     {
         /* data */
     };
     
     int score = 0, val = 0, num = 0;
-    int i, j, k, x = 2, buff;
+    int i, j, k, x = 100, buff;
 
     printf("\n>>>>>>>> Select benchmark type <<<<<<<<\n\n(1) Addition\n(2) Multiplication\n(3) Logarithmic\n# Your input : ");
     do
@@ -31,11 +32,9 @@ int main()
     } while (val != 1);
 
     printf("\n");
-    t1 = time(NULL);
+    gettimeofday(&t1, NULL);
     printf(ctime(&t1));
-    printf("\n hmmmm\n");
-    gettimeofday(&timea, NULL);
-    printf(ctime(&timea));
+
     srand(time(NULL));
 
     printf("Initializing system benchmark...\n");
@@ -43,36 +42,59 @@ int main()
     switch (num)
     {
     case 1:
-        for (k = 0; k != x; k++)
+        for (k = 0; k < x; k++)
         {
-            t1 = time(NULL);
-            while (time(NULL) < t1 + 1)
+            gettimeofday(&t1, NULL);
+            do
             {
                 buff = rand()^rand()^rand();
+                cpu_load();
+                buff = rand() ^ rand() ^ rand();
+                cpu_load();
                 score++;
-            }
-            printf("Hmm");
+                gettimeofday(&t2, NULL);
+            } while (time_cast(t2) < time_cast(t1) + 0.01);
         }
-        score = score/x;
+        score = score/(x*1000);
         break;
     case 2:
-        while (time(NULL) != t1 + 1)
+        for (k = 0; k < x; k++)
         {
-            score++;
+            gettimeofday(&t1, NULL);
+            do
+            {
+                buff = rand() ^ rand() ^ rand();
+                cpu_load();
+                buff = rand() ^ rand() ^ rand();
+                cpu_load();
+                score++;
+                gettimeofday(&t2, NULL);
+            } while (time_cast(t2) < time_cast(t1) + 0.01);
         }
+        score = score / (x * 1000);
         break;
     case 3:
-        while (time(NULL) != t1 + 1)
+        for (k = 0; k < x; k++)
         {
-            score++;
+            gettimeofday(&t1, NULL);
+            do
+            {
+                buff = rand() ^ rand() ^ rand();
+                cpu_load();
+                buff = rand() ^ rand() ^ rand();
+                cpu_load();
+                score++;
+                gettimeofday(&t2, NULL);
+            } while (time_cast(t2) < time_cast(t1) + 0.01);
         }
+        score = score / (x * 1000);
         break;
     default:
         break;
     }
 
     printf("\nBenchmark finished!\n");
-    t2 = time(NULL);
+    gettimeofday(&t2, NULL);
     printf(ctime(&t2));
     printf("\nScore : %d\n", score);
     return 0;
@@ -109,4 +131,15 @@ int int_input_validity_and_assign(int *input)
         printf("Invalid input... Enter value again : ");
         return 0;
     }
+}
+
+int cpu_load()
+{
+    34343543454343254*5432345432;  // some calculations
+}
+
+double time_cast(struct timespec sec)
+{
+    double time = sec.tv_sec + sec.tv_nsec/1000000.0;
+    return time;
 }
