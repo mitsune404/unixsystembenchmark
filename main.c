@@ -9,9 +9,7 @@ int load();
 
 int main()
 {
-    
     int score = 0, val = 0, num = 0;
- 
 
     printf("\n>>>>>>>> Select benchmark accuracy <<<<<<<<\n\n(1) Low\n(2) Medium\n(3) High\n# Your input : ");
     do
