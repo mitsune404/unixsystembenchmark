@@ -47,6 +47,7 @@ int main()
     printf("\nBenchmark finished!\n");
     system("date +%T");
     printf("\nScore : %d\n", score);
+    
     return 0;
 }
 
