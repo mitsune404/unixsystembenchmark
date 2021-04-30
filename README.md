@@ -6,8 +6,5 @@
 <br>
 ![](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
 
-
-<br>
 A benchmark program I made in C language.
-<br>
 Works on most unix based systems (Linux, macOS, Android, etc.)
