@@ -1,6 +1,6 @@
 ## Unix System Benchmark
 
-label=C lang
+<img alt="C" src="https://img.shields.io/badge/c-%2300599C.svg?&style=for-the-badge&logo=c&logoColor=blue"/>
 
 <br>
 A benchmark program I made in C language.
