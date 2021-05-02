@@ -33,7 +33,7 @@ int main()
     switch (num)
     {
         case 1:
-            score = load(150);
+            score = load(250);
             break;
         case 2:
             score = load(500);
