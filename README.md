@@ -7,4 +7,12 @@
 ![](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
 
 A benchmark program I made in C language.
-Works on most unix based systems (Linux, macOS, Android, etc.)
+Works on most unix based systems like Linux, macOS, Android (requires root privileges), etc.
+
+### Compile yourself
+There's no Makefile, just compile directly throught gcc (math.h needs to be linked).
+
+```
+gcc main.c -o main -lm
+```
+

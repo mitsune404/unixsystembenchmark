@@ -51,6 +51,7 @@ int main()
     return 0;
 }
 
+
 int int_input_validity_and_assign(int *input)
 {
 
@@ -91,20 +92,24 @@ double time_cast(struct timeval sec)
     return time;
 }
 
+
 int load (int acc)
 {   
-    int i = 0, k = 0, score_ = 0, buff;
+    int i = 0, score_ = 0;
+    long long buff;
     struct timeval t1, t2;
     srand(time(NULL));
 
-    for (k = 0; k < acc; k++)
+    for (i = 0; i < acc; i++)
     {
         gettimeofday(&t1, NULL);
         do
         {
-            buff = rand() ^ rand() ^ rand();
-            buff = rand() ^ rand();
-            buff = rand() * 69;
+            // addition
+            // substration
+            // multiplication
+            // division
+            // special funcs
 
             score_++;
             gettimeofday(&t2, NULL);
