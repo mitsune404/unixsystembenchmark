@@ -108,11 +108,11 @@ int load (int acc)
 
         do
         {
-            buff = rand() + rand();               // addition
+            buff = buff + rand();               // addition
 
             buff = buff - rand();                 // substration
 
-            buff = rand() * rand();               // multiplication
+            buff = buff * rand();               // multiplication
 
             buff = buff / rand();                // division
             
