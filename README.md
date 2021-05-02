@@ -9,6 +9,7 @@
 A benchmark program I made in C language.
 Works on most unix based systems like Linux, macOS, Android (requires root privileges), etc.
 
+
 ### Compile yourself
 There's no Makefile, just compile directly throught gcc (math.h needs to be linked).
 

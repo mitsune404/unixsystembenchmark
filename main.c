@@ -2,6 +2,7 @@
 #include <sys/time.h>
 #include <time.h>
 #include <stdlib.h>
+#include <math.h>
 
 int int_input_validity_and_assign();
 double time_cast();
@@ -96,20 +97,27 @@ double time_cast(struct timeval sec)
 int load (int acc)
 {   
     int i = 0, score_ = 0;
-    long long buff;
+    long buff = 0;
+    double double_buff = 0;
     struct timeval t1, t2;
-    srand(time(NULL));
 
     for (i = 0; i < acc; i++)
     {
+        srand(time(NULL));
         gettimeofday(&t1, NULL);
+
         do
         {
-            // addition
-            // substration
-            // multiplication
-            // division
-            // special funcs
+            buff = rand() + rand();               // addition
+
+            buff = buff - rand();                 // substration
+
+            buff = rand() * rand();               // multiplication
+
+            buff = buff / rand();                // division
+            
+            double_buff = log(rand() / 1.0);     // special funcs
+            double_buff = sin(buff / 1.0);       // special funcs
 
             score_++;
             gettimeofday(&t2, NULL);
