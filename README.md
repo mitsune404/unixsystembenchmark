@@ -12,9 +12,9 @@ Works on most unix based systems like GNU/Linux, macOS, Android (requires root p
 
 
 ### Compile yourself
-There's no Makefile, just compile directly throught gcc (math.h needs to be linked).
+Simply run the make command to obtain the binary.
 
 ```
-gcc main.c -o main -lm
+make
 ```
 
