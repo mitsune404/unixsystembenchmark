@@ -12,12 +12,12 @@ Works on most unix based systems like GNU/Linux, macOS, Android (requires root p
 
 
 ### Compile yourself
-Simply run the make command to obtain the binary:
+Run the make command to obtain the binary:
 ```
 make
 ```
 
 Compile and run the program:
 ```
-run
+make run
 ```

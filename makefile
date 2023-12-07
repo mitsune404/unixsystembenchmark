@@ -8,9 +8,9 @@ TARGET = main
 all:
 	$(CC) $(CFLAGS) $(SRC) -o $(TARGET) $(LDFLAGS)
 
-safe:
+run:
 	$(CC) $(CFLAGS) $(SRC) -o $(TARGET) $(LDFLAGS)
-		./main
+	./main
 
 test:
 	rm -f ./sandbox/test
