@@ -20,12 +20,17 @@ test2:
 	rm -f ./sandbox/test2
 	$(CC) ./sandbox/test2.c -o ./sandbox/test2
 
+sandbox:
+	rm -f ./sandbox/sandbox
+	$(cc) ./sandbox/sandbox.c -o ./sandbox/sandbox
+
 clean:
 	rm -f $(TARGET)
 
 CLEAN:
 	rm -f ./sandbox/test
 	rm -f ./sandbox/test2
+	rm -f ./sandbox/sandbox
 	rm -f $(TARGET)
 
 .PHONY: all clean test
